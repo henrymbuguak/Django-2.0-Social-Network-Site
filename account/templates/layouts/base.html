@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'layouts/styles.html' %}
+</head>
+<body>
+{% include 'layouts/navbar.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+
+{% include 'layouts/scripts.html' %}
+</body>
+</html>

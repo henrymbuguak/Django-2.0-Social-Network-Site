@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Edit your account | Henrylab Social Network{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-top: 3%">
+            <h2 class="page-header">Edit Your Profile</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                {{ user_form|crispy }}
+                {{ profile_form|crispy }}
+                {% csrf_token %}
+                <p><input type="submit" value="save changes" class="btn btn-primary"></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
