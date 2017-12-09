@@ -25,7 +25,7 @@ SECRET_KEY = '@v_s^t#g+1+5zmcqd8qktoe#$-vebay--0v7nr+ouu2cvbjiwk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -140,5 +141,23 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
 )
 
+
+# Social Auth settings
+
+SOCIAL_AUTH_FACEBOOK_KEY = '338051796649093'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f170c4217e991c799e5846ecfb6f8141'
+
+
+SOCIAL_AUTH_TWITTER_KEY = 'uuvz2M36DxtTqZb7Qvk1SEiUU' # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'cqY5BdJLuEa9pUO4BXuLh0hMs7HIz1EOzikiJ3BNriCl7sOThq' # Twitter Consumer Secret
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ' 125135407392-mk26u3ookdktbi3gcku43sff8jep5deb.apps.googleusercontent.com ' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ' RZqVdw-MbYqXfoGXrF_Yst3b ' # Google Consumer Secret

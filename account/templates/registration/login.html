@@ -27,6 +27,11 @@
                 <a href="{% url 'password_reset' %}">Forgot Your Password?</a>
                 <a href="{% url "register" %}" class="pull-right">Register here</a>
             </p>
+            <p>
+                <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-sm">Login with facebook</a>
+                <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-info btn-sm">Login with twitter</a>
+                <a href="{% url 'social:begin' 'google' %}" class="btn btn-danger btn-sm pull-right">Login with Google+</a>
+            </p>
         </div>
     </div>
     </div>

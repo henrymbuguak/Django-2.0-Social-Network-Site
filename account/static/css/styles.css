@@ -5,3 +5,9 @@
 .active a{
     background-color: #338DD7 !important;
 }
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
