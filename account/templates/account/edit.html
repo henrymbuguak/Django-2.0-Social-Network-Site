@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row" style="margin-top: 3%">
             <h2 class="page-header">Edit Your Profile</h2>
+            {% include 'layouts/messages.html' %}
             <form action="" method="post" enctype="multipart/form-data">
                 {{ user_form|crispy }}
                 {{ profile_form|crispy }}

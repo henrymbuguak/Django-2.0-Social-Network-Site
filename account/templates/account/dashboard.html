@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row" style="margin-top: 3%">
             <h2 class="page-header">Dashboard</h2>
+            {% include 'layouts/messages.html' %}
             <p>Welcome to your dashboard. You can <a href="{% url 'edit' %}">edit your profile</a> or
                 <a href="{% url 'password_change' %}">change your password</a>
             </p>
