@@ -16,8 +16,11 @@
 
     <ul class="nav navbar-nav navbar-right">
         {% url 'dashboard' as dash %}
+        {% url 'create_image' as create %}
         {% if request.user.is_authenticated %}
             <li {% if request.path == dash %} class="active"{% endif %}><a href="{% url 'dashboard' %}" style="color: #ffffff">Dashboard</a></li>
+            <li {% if request.path == create %} class="active"{% endif %}><a href="{% url 'create_image' %}" style="color: #ffffff">Bookmark Image</a></li>
+
         {% endif %}
       <li class="dropdown">
           {% if request.user.is_authenticated %}

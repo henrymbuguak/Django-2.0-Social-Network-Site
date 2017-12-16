@@ -13,7 +13,6 @@ class ImageCreateForm(forms.ModelForm):
             'url': forms.HiddenInput,
         }
 
-
     def clean_url(self):
         url = self.cleaned_data['url']
         valid_extensions = ['jpg', 'jpeg']

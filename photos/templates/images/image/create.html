@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Image bookmark | Henrylab{% endblock %}
+
+{% block content %}
+     <div class="container">
+        <div class="row" style="margin-top: 3%">
+            <h2 class="page-header">Bookmark mark an image</h2>
+            {% include 'layouts/messages.html' %}
+            <img src="{{ request.GET.url }}" alt="" class="img-responsive">
+            <form action="." method="post">
+                {{ form|crispy }}
+                {% csrf_token %}
+                <p><input type="submit" value="Bookmark an image" /></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
