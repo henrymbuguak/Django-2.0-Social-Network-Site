@@ -25,7 +25,7 @@ SECRET_KEY = '@v_s^t#g+1+5zmcqd8qktoe#$-vebay--0v7nr+ouu2cvbjiwk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com']
+ALLOWED_HOSTS = ['mysite.com', '127.0.0.1']
 
 
 # Application definition
