@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Image bookmark | Henrylab{% endblock %}
+
+{% block content %}
+     <div class="container">
+        <div class="row" style="margin-top: 3%">
+            <h2 class="page-header">{{ image.title }}</h2>
+            {% include 'layouts/messages.html' %}
+            <div class="col-md-6">
+                <img src="{{ image.image.url }}" alt="" class="img-responsive" height="100px">
+                {% with total_likes=image.users_like.count  %}
+                    <div class="row">
+                        <div>
+                            <span class="pager">
+                                {{ total_likes }} like {{ total_likes|pluralize }}
+                            </span>
+                        </div>
+                    <p class="text-muted">{{ image.description|safe|linebreaks }}</p>
+                    </div>
+                    <div class="row">
+                    {% for user in image.users_like.all %}
+                        <div class="thumbnail">
+                            <img src="{{ user.photo.url }}" alt="" class="img-responsive">
+                            <p class="text-muted">{{ user.first_name }}</p>
+                        </div>
+                        {% empty %}
+                        <p class="text-info">No likes for this image yet!</p>
+                    {% endfor %}
+
+                    </div>
+                {% endwith %}
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
