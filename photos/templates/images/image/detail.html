@@ -8,7 +8,16 @@
             <h2 class="page-header">{{ image.title }}</h2>
             {% include 'layouts/messages.html' %}
             <div class="col-md-6">
-                <img src="{{ image.image.url }}" alt="" class="img-responsive" height="100px">
+            {% load thumbnail %}
+
+            {% load thumbnail %}
+                {% thumbnail image.image "300" as im %}
+                    <a href="{{ image.image.url }}">
+                        <img src="{{ im.url }}" class="img-responsive">
+                    </a>
+                {% endthumbnail %}
+
+{#                <img src="{{ image.image.url }}" alt="" class="img-responsive" height="100px">#}
                 {% with total_likes=image.users_like.count  %}
                     <div class="row">
                         <div>

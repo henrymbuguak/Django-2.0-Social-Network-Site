@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'social_django',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +124,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIAL_URL = '/media/'
-MEDIAL_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
